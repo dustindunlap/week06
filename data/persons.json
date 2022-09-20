@@ -1,0 +1,23 @@
+[
+	{
+	"name": "Wilson Fisk",
+	"email": "kingping@email.com",
+	"phone": "+14759136510",
+	"birthdate": "04/05/1967",
+	"id": 6161
+	},
+	{
+	"name": "Adrian Toomes",
+	"email": "vulture@email.com",
+	"phone": "+12695605960",
+	"birthdate": "02/02/1963",
+	"id": 6162
+	},
+	{
+	"name": "William Baker",
+	"email": "sandman@email.com",
+	"phone": "+14029431552",
+	"birthdate": "05/04/1963",
+	"id": 6163
+	}
+]

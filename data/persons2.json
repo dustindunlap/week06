@@ -1,0 +1,23 @@
+[
+	{
+	"name": "Harvey Dent",
+	"email": "twoface@email.com",
+	"phone": "+14759136510",
+	"birthdate": "02/08/1954",
+	"id": 4331
+	},
+	{
+	"name": "Slade Wilson",
+	"email": "deathstroke@email.com",
+	"phone": "+12695605960",
+	"birthdate": "12/02/1980",
+	"id": 4332
+	},
+	{
+	"name": "Noah Kuttler",
+	"email": "calculator@email.com",
+	"phone": "+14029431552",
+	"birthdate": "09/03/1976",
+	"id": 4333
+	}
+]
