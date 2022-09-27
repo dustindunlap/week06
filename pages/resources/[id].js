@@ -1,12 +1,5 @@
 import { getResourceData, getResourceIds } from "../../lib/resources";
 
-export async function getStaticPaths() {
-    const paths = await getResourceIds();
-    return {
-        paths,
-        fallback: false
-    };
-}
 
 export async function getStaticProps({ params }) {
     const itemData = await getResourceData(params.id);
@@ -14,6 +7,14 @@ export async function getStaticProps({ params }) {
         props: {
             itemData
         }
+    };
+}
+
+export async function getStaticPaths() {
+    const paths = await getResourceIds();
+    return {
+        paths,
+        fallback: false
     };
 }
 
