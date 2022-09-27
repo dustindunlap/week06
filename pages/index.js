@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css'
 import { getSortedList } from '../lib/data';
 
 
+
 export async function getStaticProps() {
   const allData = getSortedList();
   return {

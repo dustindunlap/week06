@@ -1,22 +1,32 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-
-import fs from 'fs';
-import path from 'path';
-
-const dataDir = path.join( process.cwd(), "data" );
+import firebase from "../../lib/firebase";
 
 
 
-export default function handler(req, res) {
-  const filepath = path.join( dataDir, "persons.json" );
-  const jsondata = fs.readFileSync(filepath, "utf8");
-  const jsonObj = JSON.parse(jsondata);
-  
-  jsonObj.sort(
-    function(a,b) {
-      return a.name.localeCompare(b.name);
-    }
-  );
-  
-  res.status(200).json(jsonObj);
+export default async function handler(req, res) {
+  try{
+    const snapshot = await firebase.collection("persons").get();
+    let output = [];
+
+    snapshot.forEach(
+      (doc) => {
+        output.push(
+          {
+            id: doc.id,
+            data: doc.data()
+          }
+        )
+      }
+    );
+
+    console.log(output);
+
+    res.status = 200;
+    res.setHeader( "Content-Type", "application/json" );
+    res.json( {output} );
+
+  } catch(err) {
+    console.error(err);
+    res.status(500).end(err.message);
+  }
 }
