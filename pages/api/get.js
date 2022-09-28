@@ -2,7 +2,6 @@
 import firebase from "../../lib/firebase";
 
 
-
 export default async function handler(req, res) {
   try{
     const snapshot = await firebase.collection("persons").get();
@@ -15,7 +14,7 @@ export default async function handler(req, res) {
             id: doc.id,
             data: doc.data()
           }
-        )
+        );
       }
     );
 
